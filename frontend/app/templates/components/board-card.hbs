@@ -1,0 +1,26 @@
+<div class="card text-white bg-info mb-3">
+  <div class="card-header d-flex justify-content-between">
+    <span class='text-white'>
+      {{#if board.updatedAt}}
+        {{moment-from-now board.updatedAt interval=1000}}
+      {{/if}}
+    </span>
+
+    <span class={{if isHovering 'visible' 'invisible'}}>
+      {{#link-to 'boards.edit' board.id class='text-white no-underline'}}
+        {{fa-icon 'cog'}}
+      {{/link-to}}
+
+      <button {{action 'delete'}} type='button' class='btn btn-link btn-sm pt-0 text-white no-underline'>
+        {{fa-icon 'remove'}}
+      </button>
+    </span>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title" data-test-board-title={{board.title}}>
+      {{#link-to 'board' board.id class='text-white no-underline'}}
+        {{board.title}}
+      {{/link-to}}
+    </h4>
+  </div>
+</div>

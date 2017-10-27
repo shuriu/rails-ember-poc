@@ -1,0 +1,37 @@
+{
+  "properties": {
+    "errors": {
+      "id": "/properties/errors",
+      "items": {
+        "id": "/properties/errors/items",
+        "properties": {
+          "detail": {
+            "id": "/properties/errors/items/properties/detail",
+            "type": "string"
+          },
+          "code": {
+            "id": "/properties/errors/items/properties/code",
+            "type": "string"
+          },
+          "source": {
+            "id": "/properties/errors/items/properties/source",
+            "properties": {
+              "pointer": {
+                "id": "/properties/errors/items/properties/source/properties/pointer",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "title": {
+            "id": "/properties/errors/items/properties/title",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

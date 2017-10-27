@@ -1,0 +1,16 @@
+<p class='py-3'>
+  {{#if isAdding}}
+    {{#do-form this submit=(action 'save') as |f|}}
+      {{f.input-field 'title' placeholder='Add a new column..' autocomplete='off'}}
+
+      <button {{action 'stopAdding'}} type='button' class='btn btn-outline-secondary btn-block'>
+        Cancel
+      </button>
+    {{/do-form}}
+  {{else}}
+    <button {{action 'startAdding'}} type='button' class='btn btn-outline-secondary btn-block'>
+      Add Column
+    </button>
+  {{/if}}
+</p>
+

@@ -1,0 +1,34 @@
+<h5 class='d-flex py-3 mb-0 justify-content-between text-white'>
+  {{#if isEditing}}
+    {{#do-form column submit=(action 'save') class='form-inline w-100' as |f|}}
+      {{f.input-field 'title'}}
+
+      <button {{action 'stopEditing'}} type='button' class='btn btn-sm btn-link pt-0 ml-auto'>
+        {{fa-icon 'close'}}
+      </button>
+    {{/do-form}}
+  {{else}}
+    {{column.title}}
+    <span class={{if isHovering 'visible' 'invisible'}} >
+      <button {{action 'startEditing'}} type='button' class='btn btn-sm btn-link pt-0 text-white'>
+        {{fa-icon 'cog'}}
+      </button>
+
+      <button {{action 'destroy'}} type='button' class='btn btn-sm btn-link pt-0 text-white'>
+        {{fa-icon 'remove'}}
+      </button>
+    </span>
+  {{/if}}
+</h5>
+
+<hr class='mt-0'>
+
+<ul class='list-group'>
+  {{#each column.tasks as |task|}}
+    {{task-card task}}
+  {{/each}}
+
+  <li class='list-group-item my-1 p-2 border-0 bg-info {{if isHovering 'visible' 'invisible'}}'>
+    {{task-form column}}
+  </li>
+</ul>

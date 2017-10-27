@@ -1,0 +1,23 @@
+{{#if isEditing}}
+  {{#do-form task submit=(action 'save') class='form-inline w-100' as |f|}}
+    {{f.input-field 'title'}}
+
+    <button {{action 'stopEditing'}} type='button' class='btn btn-sm btn-link pt-0 ml-auto'>
+      {{fa-icon 'close'}}
+    </button>
+  {{/do-form}}
+{{else}}
+  <span class='w-75'>
+    {{task.title}}
+  </span>
+
+  <span class={{if isHovering 'visible' 'invisible'}}>
+    <button {{action 'startEditing'}} type='button' class='btn btn-sm btn-link pt-0 text-muted'>
+      {{fa-icon 'cog'}}
+    </button>
+
+    <button {{action 'destroy'}} type='button' class='btn btn-sm btn-link pt-0 text-muted'>
+      {{fa-icon 'remove'}}
+    </button>
+  </span>
+{{/if}}

@@ -1,0 +1,8 @@
+{{#do-form this submit=(perform emailAuthentication) class='mt-3' as |f|}}
+  {{f.input-field 'identification' controlType='email' label='Email' placeholder='Type your email' hint='admin@example.com'}}
+  {{f.input-field 'password' controlType='password' label='Password' placeholder='Type your password' hint='password'}}
+
+  <button type='submit' class='btn btn-outline-primary w-100' data-test-submit-button>
+    {{if emailAuthentication.isIdle 'Sign in' 'Signing in...'}}
+  </button>
+{{/do-form}}

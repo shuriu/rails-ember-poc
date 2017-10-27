@@ -1,0 +1,17 @@
+{{#if open}}
+  <div class="b-modal modal show d-block">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        {{ yield (hash
+          header=(component 'b-modal/header')
+          body=(component 'b-modal/body')
+          footer=(component 'b-modal/footer')
+        )}}
+      </div>
+    </div>
+  </div>
+
+  {{#ember-wormhole to=_backdropDestination}}
+    <div class='modal-backdrop show'></div>
+  {{/ember-wormhole}}
+{{/if}}

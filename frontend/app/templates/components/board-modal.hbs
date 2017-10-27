@@ -1,0 +1,25 @@
+{{#b-modal open=true onClose=(action 'close') as |modal|}}
+  {{#modal.header}}
+    <h5 class="modal-title" data-test-modal-title>
+      {{#if model}}
+        Editing {{model.title}}
+      {{else}}
+        Adding new Board
+      {{/if}}
+    </h5>
+    <button {{action 'close'}} type="button" class='close' aria-label='Close' title='Close' data-test-close-icon>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  {{/modal.header}}
+
+  {{#modal.body}}
+    {{#do-form resource submit=(action 'save') as |f|}}
+      {{f.input-field 'title' label='Title' tabindex=1 }}
+    {{/do-form}}
+  {{/modal.body}}
+
+  {{#modal.footer}}
+    <button {{action 'close'}} type="button" class="btn btn-secondary" title='Close' data-test-close>Close</button>
+    <button {{action 'save'}} type="button" class="btn btn-primary" title='Save changes' data-test-save>Save changes</button>
+  {{/modal.footer}}
+{{/b-modal}}

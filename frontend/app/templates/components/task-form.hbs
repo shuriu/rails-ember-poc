@@ -1,0 +1,13 @@
+{{#if isAdding}}
+  {{#do-form this submit=(action 'save') as |f|}}
+    {{f.input-field 'title' placeholder='Add a new task..' autocomplete='off'}}
+
+    <button {{action 'stopAdding'}} type='button' class='btn btn-primary text-white btn-block'>
+      Cancel
+    </button>
+  {{/do-form}}
+{{else}}
+  <button {{action 'startAdding'}} type='button' class='btn btn-primary text-white btn-block'>
+    Add Task
+  </button>
+{{/if}}

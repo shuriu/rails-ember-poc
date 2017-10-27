@@ -1,0 +1,18 @@
+@import "ember-cli-bootstrap-4/bootstrap";
+
+.board-columns {
+  min-height: 84vh;
+  flex-wrap: nowrap;
+}
+
+.container-fluid {
+  overflow: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.no-underline {
+  text-decoration: none !important;
+}

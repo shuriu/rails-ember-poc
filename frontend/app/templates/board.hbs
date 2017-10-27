@@ -1,0 +1,11 @@
+<div class="row board-columns">
+  {{#each board.columns as |column|}}
+    {{column-card column}}
+  {{/each}}
+
+  <div class='col-3 ml-3 bg-light'>
+    {{column-form board}}
+  </div>
+</div>
+
+{{outlet}}
